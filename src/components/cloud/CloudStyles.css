@@ -1,0 +1,39 @@
+.cloud{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background: rgba(0, 0, 0,.3);
+}
+
+.cloud:before{
+    content: '';
+    position: absolute;
+    height:100%;
+    width:100%;
+    background: url('../../assets/cloud-bg.png');
+    z-index: -1;
+}
+
+.cloud .content{
+    position: absolute;
+    left:0;
+    top:30%;
+    width:50%;
+    padding:1rem;
+}
+
+.cloud h2{
+    color:#f8f8f8;
+}
+
+.cloud p{
+    color:#f8f8f8;
+    margin: 1rem 0;
+}
+
+@media screen and (max-width:940px){
+    .cloud .content{
+        left:0;
+        width:100%;
+    }
+}
