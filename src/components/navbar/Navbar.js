@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import "./NavbarStyles.css";
 import { SiDatabricks } from "react-icons/si";
-import { FaBars,FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Navbar() {
-    const [nav,setNav]= useState(false)
-    const handleNav = () => setNav(!nav)
+  const [nav, setNav] = useState(false);
+  const handleNav = () => setNav(!nav);
 
   return (
-    <div name='top' className="navbar">
+    <div name="top" className="navbar">
       <div className="container">
         {/* logo container */}
         <div className="logo">
@@ -16,18 +17,24 @@ function Navbar() {
           <h1>Secured</h1>
         </div>
         {/* nav-menu links */}
-        <ul className={nav ? "nav-menu active": "nav-menu"}>
-          <li>Home</li>
-          <li>Recovery</li>
-          <li>Cloud</li>
-          <li>Contact</li>
+        <ul className={nav ? "nav-menu active" : "nav-menu"}>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/recovery">Recovery</Link>
+          </li>
+          <li>
+            <Link to="/cloud">Cloud</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
           <button>Sign in</button>
         </ul>
 
         <div className="hamburger-icon" onClick={handleNav}>
-            {!nav ? (<FaBars className="icon"/>) : (<FaTimes className="icon"/>)
-            }
-          
+          {!nav ? <FaBars className="icon" /> : <FaTimes className="icon" />}
         </div>
       </div>
     </div>
